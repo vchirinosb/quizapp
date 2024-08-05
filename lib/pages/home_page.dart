@@ -3,6 +3,8 @@ import 'package:quizappg9/quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -26,7 +28,7 @@ class _HomePageState extends State<HomePage> {
           desc: "El cuestionario ha llego a su fin",
           buttons: [
             DialogButton(
-                child: Text("OK"),
+                child: const Text("OK"),
                 onPressed: () {
                   Navigator.pop(context);
                   quizBrain.restartQuiz();
@@ -45,7 +47,7 @@ class _HomePageState extends State<HomePage> {
       children: [
         Text(
           numberQuestion,
-          style: TextStyle(color: Colors.white, fontSize: 18),
+          style: const TextStyle(color: Colors.white, fontSize: 18),
         ),
         Icon(
           isCorrect ? Icons.check : Icons.close,
@@ -58,12 +60,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff2B2E42),
+      backgroundColor: const Color(0xff2B2E42),
       appBar: AppBar(
-        backgroundColor: Color(0xff2B2E42),
+        backgroundColor: const Color(0xff2B2E42),
         elevation: 10,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Quiz App",
           style: TextStyle(
             color: Colors.white,
@@ -78,7 +80,7 @@ class _HomePageState extends State<HomePage> {
               child: Center(
                 child: Text(
                   quizBrain.getQuestionText(),
-                  style: TextStyle(color: Colors.white, fontSize: 25),
+                  style: const TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),
             ),
@@ -92,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     checkAnswer(true, quizBrain.getNumberQuestion());
                   },
-                  child: Text("Verdadero"),
+                  child: const Text("Verdadero"),
                 ),
               ),
             ),
@@ -106,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     checkAnswer(false, quizBrain.getNumberQuestion());
                   },
-                  child: Text("false"),
+                  child: const Text("false"),
                 ),
               ),
             ),
